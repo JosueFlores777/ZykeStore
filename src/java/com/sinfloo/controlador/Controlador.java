@@ -16,10 +16,13 @@ import com.sinfloo.modelo.Tarjeta;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -81,7 +84,7 @@ public class Controlador extends HttpServlet {
     String datos[] = new String[4];
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String accion = request.getParameter("accion");
@@ -249,7 +252,9 @@ public class Controlador extends HttpServlet {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
             case "RealizarPago":
-                String nombres = request.getParameter("txtnombre");
+                int a=1;
+             if(a==2){
+                    String nombres = request.getParameter("txtnombre");
                 String numeroT = request.getParameter("txtnumero");
                 String fechaE = request.getParameter("txtfecha");
                 String codS = request.getParameter("txtcodigo");
@@ -314,6 +319,9 @@ public class Controlador extends HttpServlet {
                     out.print("</div>");
                     out.print("</div>");
                 }
+             }else{
+               request.getRequestDispatcher("Controlador?accion=carrito").forward(request, response);
+             }
                 break;
             case "GenerarCompra":
                 idpago = cdao.IdPago();
@@ -622,6 +630,9 @@ public class Controlador extends HttpServlet {
                 request.setAttribute("productos", productos);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
+            case "Reportes":
+                
+                break;
             default:
                 //listaProductos=new ArrayList<>();
                 productos = pdao.listarPag();
@@ -637,13 +648,21 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -811,7 +830,7 @@ public class Controlador extends HttpServlet {
                 if (!fileItem.isFormField()) {
                     String nomfoto = fileItem.getName();
                     if (!"".equals(nomfoto)) {
-                        File file = new File("D:\\SinFloo\\Proyectos en Java\\CarritoCompras1.1\\web\\img\\fotouser\\" + fileItem.getName());
+                        File file = new File("C:\\Users\\josue\\Desktop\\ZykeStore\\web\\img\\fotouser" + fileItem.getName());
                         fileItem.write(file);
                         c.setFoto("img/fotouser/" + fileItem.getName());
                     }

@@ -1,14 +1,35 @@
-img{
-    transition:transform 1s;
-}
-img:hover{
-    transform : scale(1.5);
+
+nav ul li a:hover{
+    color: #00A807;
 }
 
-.btn2{    
-    transition: transform 0.5s;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
 }
-.btn2:hover{
-    transform: scale(1.2);
+body{
+    background-color: #000000  !important;
+    font-family: 'Merriweather Sans', sans-serif !important;
+    color: #999999 !important;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;  
 }
 

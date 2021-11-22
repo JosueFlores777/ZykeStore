@@ -141,7 +141,7 @@ public class ProductoDAO extends Conexion {
         List lista = new ArrayList();
         String sql = "SELECT p.idProducto,p.Nombres,p.Foto,p.Descripcion,p.Precio,p.Stock, c.Descripcion, p.estado\n"
                 + "FROM producto p INNER JOIN categoria c \n"
-                + "on p.idCategoria=c.idCategoria where p.estado='20' || p.estado='30' || p.estado='40' || p.estado='50'|| p.estado='60'|| p.estado='70'";
+                + "on p.idCategoria=c.idCategoria where p.estado='20' or p.estado='30' or p.estado='40' or p.estado='50' or p.estado='60' or p.estado='70'";
         try {
             ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();

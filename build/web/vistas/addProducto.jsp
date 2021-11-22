@@ -12,32 +12,21 @@
         <title>Carrito de Compras</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand"  href="#"><i><img src="img/logo.png" width="50" height="40"></i> LT Store</a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./Controlador?accion=home"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
-                    </li>                                 
-                </ul>                                           
-                <!--<ul class="navbar-nav btn-group my-2 my-lg-0" role="group">
-                    <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fas fa-user-tie"></i> ${logueo}</a>
-                    <div class="dropdown-menu text-center dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><img src="img/user.png" alt="60" height="60"/></a>                        
-                        <a class="dropdown-item" href="#">${user}</a>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">${correo}</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Controlador?accion=MisCompras">Mis Compras</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./Controlador?accion=Salir"> <i class="fas fa-arrow-right"> Salir</i></a>                        
-                    </div>
-                </ul>   -->  
-            </div>
-        </nav>
+        <div class="navbar" style=" display: flex; align-items: center; background-color: black">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; width: 100%;"></i></span>
+                </button>
+                <a class="navbar-brand" style="color: white" href="#"><i><img src="img/logo.png" width="60" height="60"></i>ZyKe Store</a>
+
+                <div style="flex: 1; text-align: right;" id="navbarTogglerDemo03">
+                    <ul style="display: inline-block; list-style-type: none;">         
+                        <li style=" display: inline-block; margin-right: 15px; ">
+                            <a class="nav-link"style="text-decoration: none; color: #999999;"href="./Controlador?accion=home"><i class="fas fa-home" style="color: white"></i> Home</a>
+                        </li>                  
+                    </ul>  
+                        
+                </div>
+            </div> 
         <!-- Modal Add Producto -->
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">

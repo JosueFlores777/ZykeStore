@@ -1,5 +1,6 @@
 package com.sinfloo.modelo;
-
+import java.sql.Types;
+import java.sql.CallableStatement;
 import com.sinfloo.config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,16 +14,22 @@ public class ClienteDAO {
     Connection con;
     Conexion cn = new Conexion();
     PreparedStatement ps;
+       CallableStatement st;
     ResultSet rs;
+    
 
-    public List listar() {
+    public List listar() throws SQLException {
         List<Cliente> lista = new ArrayList<>();
-        String sql = "select * from cliente";
         try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
+           con = cn.getConnection();
+           st = con.prepareCall ("{call SP_ListarCliente()} "); 
+           rs = st.executeQuery();
+         // String sql = "select * from cliente";
+      
+          //  con = cn.getConnection();
+           // ps = con.prepareStatement(sql);
+         //   rs = ps.executeQuery();
+             while (rs.next()){
                 Cliente c = new Cliente();
                 c.setId(rs.getInt(1));
                 c.setDni(rs.getString(2));
@@ -32,7 +39,7 @@ public class ClienteDAO {
                 c.setPass(rs.getString(6));
                 c.setFoto(rs.getString(7));
                 lista.add(c);
-            }
+             }
         } catch (SQLException e) {
             System.err.println("Error:"+e);
         }
@@ -81,7 +88,6 @@ public class ClienteDAO {
         }
         return c;
     }
-
     public Cliente Validar(String email, String pass) {
         String sql = "SELECT * FROM  cliente c INNER JOIN rol r\n"
                 + "on c.idRol=r.idRol\n"
@@ -110,11 +116,11 @@ public class ClienteDAO {
         return c;
     }
 
-    public int AgregarCliente(Cliente c) {
-        String sql = "INSERT INTO cliente (Dni, Nombres, Direccion, Email, Password)values(?,?,?,?,?)";
+    public int AgregarCliente(Cliente c) throws SQLException {
+         con = cn.getConnection();
+          st =con.prepareCall("{call SP_AgregarCliente(?,?,?,?,?)}");
         try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
+            
             ps.setString(1, c.getDni());
             ps.setString(2, c.getNombres());
             ps.setString(3, c.getDireccion());
@@ -126,19 +132,19 @@ public class ClienteDAO {
         return 1;
     }
 
-    public int AgregarUsuario(Cliente c) {
-        String sql = "INSERT INTO cliente (Dni, Nombres, Direccion, Email, Password,Foto,idRol)values(?,?,?,?,?,?,?)";
+    public int AgregarUsuario(Cliente c) throws SQLException {
+        con = cn.getConnection();
+        st =con.prepareCall("{call SP_AgregarUsuario(?,?,?,?,?,?,?)}");
         try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, c.getDni());
-            ps.setString(2, c.getNombres());
-            ps.setString(3, c.getDireccion());
-            ps.setString(4, c.getEmail());
-            ps.setString(5, c.getPass());
-            ps.setString(6, c.getFoto());
-            ps.setInt(7, c.getIdrol());
-            ps.executeUpdate();
+            st.setString(1, c.getDni());
+            st.setString(2, c.getNombres());
+            st.setString(3, c.getDireccion());
+            st.setString(4, c.getEmail());
+            st.setString(5, c.getPass());
+            st.setString(6, c.getFoto());
+            st.setInt(7, c.getIdrol());
+            st.execute();
+           
         } catch (Exception e) {
         }
         return 1;

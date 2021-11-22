@@ -10,19 +10,21 @@
         <title>Carrito de Compras</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand"  href="#"><i><img src="img/logo.png" width="50" height="40"></i> LT Store</a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./Controlador?accion=home"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
-                    </li>                                 
-                </ul>                                           
-            </div>
-        </nav>        
+         <div class="navbar" style=" display: flex; align-items: center; background-color: black">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; width: 100%;"></i></span>
+                </button>
+                <a class="navbar-brand" style="color: white" href="#"><i><img src="img/logo.png" width="60" height="60"></i>ZyKe Store</a>
+
+                <div style="flex: 1; text-align: right;" id="navbarTogglerDemo03">
+                    <ul style="display: inline-block; list-style-type: none;">         
+                        <li style=" display: inline-block; margin-right: 15px; ">
+                            <a class="nav-link"style="text-decoration: none; color: #999999;"href="./Controlador?accion=home"><i class="fas fa-home" style="color: white"></i> Home</a>
+                        </li>                  
+                    </ul>  
+                        
+                </div>
+            </div>       
         <!-- Modal Edit Producto -->
         <div class="modal fade bd-example-modal-lg" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">

@@ -19,9 +19,9 @@
         <div class="container mt-4">
             <div class="col-lg-8">
                 <div class="card p-2">
-                    <h2 class="text-center">Empresa "SinFloo"</h2>  
-                    <h4 class="text-center">Av. Panamericana 123 - Lima</h4>  
-                    <h5 class="text-center">Cel. 910225993</h5>  
+                    <h2 class="text-center">Empresa "ZyKe Store"</h2>  
+                    <h4 class="text-center">San Salvador , El Salvador</h4>  
+                    <h5 class="text-center">Cel. 9999999</h5>  
                     <div class="text-center">
                         <table class="table">
                             <thead>
@@ -40,7 +40,7 @@
                                         <td>${index.index+1}</td>                                                                                                   
                                         <td>C00${p[0]}</td>                                                                                                   
                                         <td>${p[1]}</td>                                                                                                                                         
-                                        <td>S/.${p[3]}</td>                                                                                                     
+                                        <td>$ ${p[3]}</td>                                                                                                     
                                         <td>${p[4]}</td>                                  
                                         <td>${p[7]}</td>                                  
 
@@ -54,19 +54,19 @@
                             <tbody>
                                 <tr>
                                     <td class="text-right">Descuento:</td>
-                                    <td><input class="form-control" value="S/. ${datos[0]}" readonly="" style="color: #005AFF; font-weight: bold; font-size: 18px"></td>
+                                    <td><input class="form-control" value="$ ${datos[0]}" readonly="" style="color: #00A807;font-weight: bold; font-size: 18px"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-right">Sub Total :</td>
-                                    <td><input class="form-control" value="S/. ${datos[1]}" readonly="" style="color: #005AFF; font-weight: bold; font-size: 18px"></td>
+                                    <td><input class="form-control" value="$ ${datos[1]}" readonly="" style="color: #00A807; font-weight: bold; font-size: 18px"></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right">IGV:</td>
-                                    <td><input class="form-control" value="S/. ${datos[3]}" readonly="" style="color: #005AFF; font-weight: bold; font-size: 18px"></td>
+                                    <td class="text-right">IVA:</td>
+                                    <td><input class="form-control" value="$ ${datos[3]}" readonly="" style="color: #00A807; font-weight: bold; font-size: 18px"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-right">Total a Pagar :</td>
-                                    <td><input class="form-control" value="S/. ${datos[2]}" readonly="" style="color: #005AFF; font-weight: bold; font-size: 18px"></td>
+                                    <td><input class="form-control" value="$ ${datos[2]}" readonly="" style="color: #00A807; font-weight: bold; font-size: 18px"></td>
                                 </tr>
                             </tbody>
                         </table>                                           
@@ -75,7 +75,7 @@
                 <br>
                 <br>
                 <div class="form-group ml-auto">
-                    <a href="Controlador?accion=home" class="btn btn-outline-primary"> <i class="fa fa-external-link-alt"></i> Terminar Proceso</a>
+                    <a href="Controlador?accion=home" class="btn btn-outline-primary" style="text-align: center; margin: 1rem; padding: 1rem;" > <i class="fa fa-external-link-alt"></i> Terminar Proceso</a>
                 </div>
             </div>
         </div>

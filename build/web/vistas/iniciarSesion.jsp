@@ -9,16 +9,12 @@
         <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>        
         <title>Carrito de Compras</title>
     </head>
-    <body>
-        <div class="pr-2 pt-1">                         
-            <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
-            </button>                    
-        </div>        
-        <div class="modal-header text-center">                      
+    <body style="background-color: rgba(0,0,0,0.2); color: black" >
+    
+        <div style="background-color: rgba(0,0,0,0.2); color: black" class="modal-header text-center">                      
             <ul class="nav nav-pills">                           
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#pills-iniciar">Iniciar Sesion</a>
+                    <a class="nav-link active"  data-toggle="pill" href="#pills-iniciar">Iniciar Sesion</a>
                 </li>
                 <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">
                     <li class="nav-item">
@@ -27,22 +23,22 @@
                 </c:if>
             </ul>  
         </div>
-        <div class="modal-body"> 
+        <div class="modal-body" style="background-color: rgba(0,0,0,0.2); color: black" > 
             <div class="tab-content" id="pills-tabContent">
                 <!-- Iniciar Session -->
                 <div class="tab-pane fade show active" id="pills-iniciar" role="tabpanel">
                     <form action="Controlador">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-at"></i></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-at"> Correo</i></span>
                             </div>
-                            <input type="text" name="txtemail" required="" class="form-control" placeholder="example@gmail.com" >
+                            <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="text" name="txtemail" required="" class="form-control" placeholder="example@gmail.com" >
                         </div>                                                   
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i> Contraseña</span>
                             </div>
-                            <input type="password" name="txtpass" required=""  class="form-control" placeholder="12345678">
+                            <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="password" name="txtpass" required=""  class="form-control" placeholder="12345678">
                         </div>                     
                         <div class="ml-auto po">
                             <button type="submit" name="accion" value="Validar" class="btn btn-outline-primary"><i class="fa fa-save"></i> Iniciar Session</button>
@@ -55,33 +51,33 @@
                         <div class="modal-body">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-address-card"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-address-card"> DUI</i></span>
                                 </div>
-                                <input type="number" id="dni" name="txtDni" class="form-control" placeholder="46184659">
+                                <input  style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="number" id="dni" name="txtDni" class="form-control" placeholder="46184659">
                             </div>                                                   
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-user-plus"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-user-plus"></i> Nombre Completo</span>
                                 </div>
-                                <input type="text" name="txtNom" class="form-control" placeholder="Nombres Apellidos">
+                                <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="text" name="txtNom" class="form-control" placeholder="Nombres Apellidos">
                             </div>                                                   
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i <i class="fas fa-street-view"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i <i class="fas fa-street-view"></i>Direccion</span>
                                 </div>
-                                <input type="text" name="txtDir" class="form-control" placeholder="Av. Los Almaos N°356">
+                                <input  style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="text" name="txtDir" class="form-control" placeholder="Av. Los Almaos N°356">
                             </div>                                                   
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"> <i class="fas fa-envelope-open-text"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default"> <i class="fas fa-envelope-open-text">Correo</i></span>
                                 </div>
-                                <input type="email" name="txtCorreo" class="form-control" placeholder="example@gmail.com" >
+                                <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="email" name="txtCorreo" class="form-control" placeholder="example@gmail.com" >
                             </div>                                                   
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i>Contraseña</span>
                                 </div>
-                                <input type="password" name="txtPass" class="form-control" value="12345678">
+                                <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="password" name="txtPass" class="form-control" value="12345678">
                             </div> 
                             <div class="input-group mb-3">
                                 
@@ -89,7 +85,7 @@
                                     <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-cloud-upload-alt"></i></span>
                                 </div>-->
                                
-                                <input type="file" name="file">
+                                <input style="width: 300px;height: 30px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: black;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="file" name="file">
                             </div>     
                             <div class="ml-auto po">
                                 <button type="submit" name="accion" value="Registrarse" class="btn btn-outline-danger"><i class="fa fa-save"></i> Guardar</button>

@@ -1,6 +1,7 @@
 package com.sinfloo.modelo;
 
 import com.sinfloo.config.Conexion;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +16,7 @@ public class ComprasDAO {
     Conexion cn = new Conexion();
     PreparedStatement ps;
     ResultSet rs;
+    CallableStatement st;
 
     public int IdCompra() {
         int idc = 0;
@@ -98,14 +100,12 @@ public class ComprasDAO {
 
     public List Detalle(int id) {
         List lista = new ArrayList();
-        String sql = "SELECT p.idProducto, p.Nombres,p.Foto,dc.PrecioCompra,dc.Cantidad,dc.descuento,dc.precioFinal, \n"
-                + "dc.subtotal FROM detalle_compras dc INNER JOIN compras c INNER JOIN producto p\n"
-                + "on dc.idCompras=c.idCompras and dc.idProducto=p.idProducto\n"
-                + "WHERE c.idCompras=" + id;
+
         try {
             con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            st = con.prepareCall("{call SP_DetalleIdCompra(?)} ");
+            st.setInt(1, id);
+            rs = st.executeQuery();
             while (rs.next()) {
                 Object[] obd = new Object[8];
                 obd[0] = rs.getInt(1);//idprodcuto
@@ -153,38 +153,39 @@ public class ComprasDAO {
         return idpago;
     }
 
-    public Tarjeta ListarId(String numero) {       
+    public Tarjeta ListarId(String numero) {
         String sql = "select * from tarjeta where Numero=?";
-        Tarjeta t=new Tarjeta();
+        Tarjeta t = new Tarjeta();
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setString(1, numero);
             rs = ps.executeQuery();
-            while (rs.next()) {                
-             t.setId(rs.getInt(1));
-             t.setNombre(rs.getString(2));
-             t.setNumero(rs.getString(3));
-             t.setFecha(rs.getString(4));
-             t.setCodigo(rs.getString(5));
-             t.setSaldo(rs.getDouble(6));
+            while (rs.next()) {
+                t.setId(rs.getInt(1));
+                t.setNombre(rs.getString(2));
+                t.setNumero(rs.getString(3));
+                t.setFecha(rs.getString(4));
+                t.setCodigo(rs.getString(5));
+                t.setSaldo(rs.getDouble(6));
             }
         } catch (Exception e) {
         }
         return t;
     }
-    public int ActualizarPrecio(double monto, int id) { 
-        int r=0;
+
+    public int ActualizarPrecio(double monto, int id) {
+        int r = 0;
         String sql = "update tarjeta set saldo=? where idTarjeta=?";
-        Tarjeta t=new Tarjeta();
+        Tarjeta t = new Tarjeta();
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setDouble(1, monto);
-            ps.setInt(2,id);
-            r=ps.executeUpdate();           
+            ps.setInt(2, id);
+            r = ps.executeUpdate();
         } catch (Exception e) {
-            System.err.println("Error al Guardar los Datos"+e);
+            System.err.println("Error al Guardar los Datos" + e);
         }
         return r;
     }

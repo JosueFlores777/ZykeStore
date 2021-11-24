@@ -239,9 +239,7 @@
                                           
                                             <c:if test="${c.getCantidad()>0 }">
                                                 <input type="hidden" id="item1" value="${c.getIdProducto()}">
-                                                <input style="width: 80px;height: 40px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: #fff;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="number" min="1" max="10"  id="Cant" class=" form-control text-center" value="${c.getCantidad()}">
-                                 
-                                            
+                                                <input style="width: 80px;height: 40px; background: rgba(29, 34, 31,0.3); border: none; font-size: 10pt; color: #fff;  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" type="number" min="1" max="10"  id="Cant" class=" form-control text-center" value="${c.getCantidad()}">                        
                                             </c:if> 
                                               
                                         </td>   

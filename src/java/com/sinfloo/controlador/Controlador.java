@@ -252,8 +252,7 @@ public class Controlador extends HttpServlet {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
             case "RealizarPago":
-                int a=1;
-             if(a==2){
+              
                     String nombres = request.getParameter("txtnombre");
                 String numeroT = request.getParameter("txtnumero");
                 String fechaE = request.getParameter("txtfecha");
@@ -319,11 +318,11 @@ public class Controlador extends HttpServlet {
                     out.print("</div>");
                     out.print("</div>");
                 }
-             }else{
-               request.getRequestDispatcher("Controlador?accion=carrito").forward(request, response);
-             }
+          
                 break;
             case "GenerarCompra":
+              int stonk= Integer.parseInt(request.getParameter("Cant"));
+              if (p.setStock()<=stonk){
                 idpago = cdao.IdPago();
                 if (clientelogueado.getId() != 0 && listaProductos.size() != 0 && rpago == 1) {
                     if (totalPagar > 0.0) {
@@ -370,6 +369,8 @@ public class Controlador extends HttpServlet {
                 } else {
                     request.getRequestDispatcher("Controlador?accion=carrito").forward(request, response);
                 }
+              }else{  
+                  request.getRequestDispatcher("Controlador?accion=home").forward(request, response);}
                 break;
             case "MisCompras":
                 if (clientelogueado.getId() != 0) {

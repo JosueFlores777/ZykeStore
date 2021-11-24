@@ -51,7 +51,16 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-address-card"></i></span>
                                 </div>
-                                <input type="number" id="dni" name="txtDni" class="form-control" placeholder="46184659">
+                                <!-- <input type="number" id="dni" name="txtDni" class="form-control" placeholder="12345678-9">-->
+                                <div class="formulario__grupo" id="grupo__DUI">
+   
+                                    <div class="formulario__grupo-input">
+                                        <input type="text" class="formulario__input" name="txtDni" id="dni" placeholder="12345678-9">
+                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    </div>
+                                    <!--MENSAJE DE ERROR NOMBRE -->  
+                                    <p class="formulario__input-error" style="color: black" >El DUI tiene que ser de 4 a 40 dígitos.</p>
+                                </div>
                             </div>                                                   
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -75,7 +84,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i></span>
                                 </div>
-                                <input type="password" name="txtPass" class="form-control" value="12345678">
+                                <input type="password" name="txtPass" class="form-control"  placeholder="************">
                             </div> 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -231,6 +240,246 @@
                     });
                 }
             });
+            
+            
+            const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+    txtNom:  /^[A-Za-záéíóúÁÉÍÓÚñÑ ]{3,25}$/, 
+    txtCorreo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    txtDni: /^\d{8}-\d{1}$/,
+    txtPass:  /^[A-Za-záéíóúÁÉÍÓÚñÑ ]{3,25}$/, 
+    Direccion:/^[A-Za-záéíóúÁÉÍÓÚñÑ ]{3,25}$/
+}
+
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "txtNom":
+                     if(expresiones.txtNom.test(e.target.value)){
+                            document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__nombre').classList.add('formulario__grupo-correcto');
+                             document.querySelector('#grupo__nombre i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__nombre i').classList.remove('fa-times-circle');
+                              document.querySelector('#grupo__nombre .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__nombre').classList.remove('formulario__grupo-correcto');
+                            document.querySelector('#grupo__nombre i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__nombre i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__nombre .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtDir":
+			  if(expresiones.txtDir.test(e.target.value)){
+                            document.getElementById('grupo__Direc').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__Direc').classList.add('formulario__grupo-correcto');
+                               document.querySelector('#grupo__Direc i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__Direc i').classList.remove('fa-times-circle');
+                             document.querySelector('#grupo__Direc .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__Direc').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__Direc').classList.remove('formulario__grupo-correcto');
+                           document.querySelector('#grupo__Direc i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__Direc i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__Direc .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtPass":
+			  if(expresiones.txtPass.test(e.target.value)){
+                            document.getElementById('grupo__password').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__password').classList.add('formulario__grupo-correcto');
+                               document.querySelector('#grupo__password i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__password i').classList.remove('fa-times-circle');
+                             document.querySelector('#grupo__password .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__password').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__password').classList.remove('formulario__grupo-correcto');
+                           document.querySelector('#grupo__password i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__password i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__password .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtCorreo":
+			if(expresiones.txtCorreo.test(e.target.value)){
+                            document.getElementById('grupo__correo').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__correo').classList.add('formulario__grupo-correcto');
+                             document.querySelector('#grupo__correo i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__correo i').classList.remove('fa-times-circle');;
+                               document.querySelector('#grupo__correo .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__correo').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__correo').classList.remove('formulario__grupo-correcto');
+                            document.querySelector('#grupo__correo i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__correo i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__correo .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+        case "txtDni":
+			if(expresiones.txtDni.test(e.target.value)){
+                            document.getElementById('grupo__DUI').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__DUI').classList.add('formulario__grupo-correcto');
+                             document.querySelector('#grupo__DUI i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__DUI i').classList.remove('fa-times-circle');;
+                               document.querySelector('#grupo__DUI .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__DUI').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__DUI').classList.remove('formulario__grupo-correcto');
+                            document.querySelector('#grupo__DUI i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__DUI i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__DUI .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		
+	}
+}
+
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
         </script>
+        
+                
+        <style>* {
+	box-sizing: border-box;
+}
+
+
+
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}</style>
     </body>
 </html>

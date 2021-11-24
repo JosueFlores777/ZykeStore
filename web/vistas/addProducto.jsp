@@ -12,7 +12,9 @@
         <title>Carrito de Compras</title>
     </head>
     <body>
-        <div class="navbar" style=" display: flex; align-items: center; background-color: black">
+        
+      
+            <div class="navbar" style=" display: flex; align-items: center; background-color: black">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; width: 100%;"></i></span>
                 </button>
@@ -24,62 +26,107 @@
                             <a class="nav-link"style="text-decoration: none; color: #999999;"href="./Controlador?accion=home"><i class="fas fa-home" style="color: white"></i> Home</a>
                         </li>                  
                     </ul>  
-                        
+
                 </div>
             </div> 
-        <!-- Modal Add Producto -->
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Agregar Producto</h3>
-                        </div>                
-                        <div class="card-body">
-                            <form action="Controlador?accion=GuardarProducto" method="POST" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label>Nombres:</label>
-                                            <input type="text" name="txtNombre" class="form-control">
-                                        </div>   
-                                        <div class="form-group">
-                                            <label>Descripcion</label>
-                                            <textarea name="txtDescripcion" class="form-control"></textarea>
-                                        </div> 
-                                        <div class="form-group">                            
-                                            <input type="file" name="txtFoto" placeholder="sad">
+            <!-- Modal Add Producto -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Agregar Producto</h3>
+                            </div>                
+                            <div class="card-body">
+                                <form class="formulario" name="formulario1"id="formulario" action="Controlador?accion=GuardarProducto" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- <div class="form-group">
+                                                <label>Nombres:</label>
+                                                <input type="text" name="txtNombre" class="form-control">
+                                            </div> -->  
+                                            <!-- NOMBRE -->
+                                            <div class="formulario__grupo" id="grupo__nombre">
+                                                <label for="usuario" class="formulario__label">Ingrese nombre</label>
+                                                <div class="formulario__grupo-input">
+                                                    <input type="text" class="formulario__input" name="txtNombre" id="txtNombre" placeholder="Nombre...">
+                                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                </div>
+                                                <!--MENSAJE DE ERROR NOMBRE -->  
+                                                <p class="formulario__input-error" style="color: black" >El nombre tiene que ser de 4 a 40 dígitos.</p>
+                                            </div>
+                                            <!--Descripcion 
+                                            <div class="form-group">
+                                                <label>Descripcion</label>
+                                                <textarea name="txtDescripcion" class="form-control"></textarea>
+                                            </div> 
+---->  
+                                            <div class="formulario__grupo" id="grupo__Descripcion">
+                                                <label for="" class="formulario__label">Ingrese Descripcion</label>
+                                                <div class="formulario__grupo-input">
+                                                    <input type="text" class="formulario__input" name="txtDescripcion" id="txtDescripcion" placeholder="Nombre...">
+                                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                </div>
+                                            <!--    --MENSAJE DE ERROR Descripcion -->  
+                                                <p class="formulario__input-error" style="color: black" >La Descripcion tiene que ser de 4 a 400 dígitos.</p>
+                                            </div>
+
+                                            <div class="form-group">                            
+                                                <input type="file" name="txtFoto" placeholder="sad">
+                                            </div>
                                         </div>
+                                        <div class="col-sm-6">  
+                                            <!--
+                                            <div class="form-group">
+                                                <label>Precio</label>
+                                                <input type="text" step="0.01" id="precio" name="txtPrecio" class="form-control">
+                                            </div>  --> 
+                                             <div class="formulario__grupo" id="grupo__Precio">
+                                                <label for="" class="formulario__label">Ingrese Precio</label>
+                                                <div class="formulario__grupo-input">
+                                                    <input type="text" class="formulario__input" name="txtPrecio" id="txtPrecio" placeholder="Precio...">
+                                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                </div>
+                                            <!--    --MENSAJE DE ERROR Precio -->  
+                                                <p class="formulario__input-error" style="color: black" >La Precio tiene que tener.</p>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <!-- <label>Stock</label>grupo__Stock
+                                                <input type="number" name="txtStock" class="form-control">
+                                                -->  
+                                                  <div class="formulario__grupo" id="grupo__Stock">
+                                                <label for="" class="formulario__label">Ingrese Stock</label>
+                                                <div class="formulario__grupo-input">
+                                                    <input type="text" class="formulario__input" name="txtStock" id="txtStock" placeholder="Stock...">
+                                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                </div>
+                                            <!--    --MENSAJE DE ERROR Precio -->  
+                                                <p class="formulario__input-error" style="color: black" >Solo numero enteros no puedes ingresar numeros.</p>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Categoria</label>
+                                                <select class="form-control" name="txtcategoria">
+                                                    <option>Seleccionar</option>
+                                                    <c:forEach items="${categorias}" var="cat">
+                                                        <option  value="${cat.id}">${cat.categoria}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>                                       
+                                        </div>                                    
                                     </div>
-                                    <div class="col-sm-6">  
-                                        <div class="form-group">
-                                            <label>Precio</label>
-                                            <input type="number" step="0.01" id="precio" name="txtPrecio" class="form-control">
-                                        </div> 
-                                        <div class="form-group">
-                                            <label>Stock</label>
-                                            <input type="number" name="txtStock" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Categoria</label>
-                                            <select class="form-control" name="txtcategoria">
-                                                <option>Seleccionar</option>
-                                                <c:forEach items="${categorias}" var="cat">
-                                                    <option  value="${cat.id}">${cat.categoria}</option>
-                                                </c:forEach>
-                                            </select>
-                                        </div>                                       
-                                    </div>                                    
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-danger" name="accion" value="GuardarProducto">Guardar</button>
-                                </div>
-                            </form>
-                        </div>               
+                                    <div class="form-group">
+                                        <button class="btn btn-danger" name="accion" value="GuardarProducto">Guardar</button>
+                                    </div>
+                                </form>
+                            </div>               
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+       
         <!-- Modal Edit Producto -->
         <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -186,6 +233,256 @@
             }
             ;
 
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+	txtNombre: /^[A-Za-záéíóúÁÉÍÓÚñÑ ]{3,25}$/, 
+	txtPrecio: /^[0-9]+(,[0-9]+)?$/, 
+	txtDescripcion: /^[a-zA-Z0-9\_\-]{4,160}$/,
+	txtStock: /^\d+$/
+}
+
+const validarFormulario = (e) => {
+		switch (e.target.name) {
+		case "txtNombre":
+                     if(expresiones.txtNombre.test(e.target.value)){
+                            document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__nombre').classList.add('formulario__grupo-correcto');
+                             document.querySelector('#grupo__nombre i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__nombre i').classList.remove('fa-times-circle');
+                              document.querySelector('#grupo__nombre .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__nombre').classList.remove('formulario__grupo-correcto');
+                            document.querySelector('#grupo__nombre i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__nombre i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__nombre .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtPrecio":
+			  if(expresiones.txtPrecio.test(e.target.value)){
+                            document.getElementById('grupo__Precio').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__Precio').classList.add('formulario__grupo-correcto');
+                               document.querySelector('#grupo__Precio i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__Precio i').classList.remove('fa-times-circle');
+                             document.querySelector('#grupo__Precio .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__Precio').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__Precio').classList.remove('formulario__grupo-correcto');
+                           document.querySelector('#grupo__Precio i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__Precio i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__Precio .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtDescripcion":
+			  if(expresiones.txtDescripcion.test(e.target.value)){
+                            document.getElementById('grupo__Descripcion').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__Descripcion').classList.add('formulario__grupo-correcto');
+                               document.querySelector('#grupo__Descripcion i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__Descripcion i').classList.remove('fa-times-circle');
+                             document.querySelector('#grupo__Descripcion .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__Descripcion').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__Descripcion').classList.remove('formulario__grupo-correcto');
+                           document.querySelector('#grupo__Descripcion i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__Descripcion i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__Descripcion .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		case "txtStock":
+			if(expresiones.txtStock.test(e.target.value)){
+                            document.getElementById('grupo__Stock').classList.remove('formulario__grupo-incorrecto');
+                             document.getElementById('grupo__Stock').classList.add('formulario__grupo-correcto');
+                             document.querySelector('#grupo__Stock i').classList.add('fa-check-circle');
+                             document.querySelector('#grupo__Stock i').classList.remove('fa-times-circle');;
+                               document.querySelector('#grupo__Stock .formulario__input-error').classList.remove('formulario__input-error-activo');
+                        }else {
+                            document.getElementById('grupo__Stock').classList.add('formulario__grupo-incorrecto');
+                            document.getElementById('grupo__Stock').classList.remove('formulario__grupo-correcto');
+                            document.querySelector('#grupo__Stock i').classList.remove('fa-check-circle');
+                             document.querySelector('#grupo__Stock i').classList.add('fa-times-circle');
+                             document.querySelector('#grupo__Stock .formulario__input-error').classList.add('formulario__input-error-activo');
+                        }
+		break;
+		
+	}
+}
+
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+
+
+
         </script>
+        <!--ERROR VALIDACIOONES-->
+        <style>
+            * {
+	box-sizing: border-box;
+}
+
+
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+.formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}
+        </style>
     </body>
 </html>

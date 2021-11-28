@@ -253,7 +253,7 @@ public class Controlador extends HttpServlet {
                 break;
             case "RealizarPago":
               
-                    String nombres = request.getParameter("txtnombre");
+                String nombres = request.getParameter("txtnombre");
                 String numeroT = request.getParameter("txtnumero");
                 String fechaE = request.getParameter("txtfecha");
                 String codS = request.getParameter("txtcodigo");

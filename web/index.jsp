@@ -9,27 +9,34 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>       
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>     
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
         <link rel="icon" href="img/logorack.png">
         <style>
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
             nav ul li a{
                 text-decoration: none;
-                color: #999999;
-                display: inline-block;
-                margin-right: 30px;  
+                color: #111 !important;
+                display: inline-block !important;
+                margin-right: 30px !important;
+                font-size:10px !important;
+                color: #111 !important;
             }
 
             body{
-                background-color: #000000  !important;
+                background-color: #fff  !important;
                 font-family: 'Merriweather Sans', sans-serif !important;
-                color: #999999 !important;
+                color: #111 !important;
             }
             .container-1 .icon{
                 font-size:10px;
                 font-family:Verdana,Helvetica;
                 font-weight:bold;
-                color:white;
+                color:111;
                 border:0px;
                 width:80px;
                 height:30px;
@@ -69,17 +76,17 @@
                 margin: 25px 0;
                 width: 250%;
             }
-            
+
             .cabezera{
-                background: linear-gradient(45deg,#000000,#0A2012);
+                background: radial-gradient(#fff,#ffd6d6);
             }
             .cabezera .fila{
-                margin-top: 30px ;
-                padding-bottom: 1px;
+                margin-top: 65px ;
+                padding-bottom: 55px;
             }
             .btn{
                 display: inline-block;
-                background: #999999 ;
+                background: #ff523b ;
                 color: #fff; 
                 padding: 8px 30px;
                 margin: 30px 0;
@@ -87,29 +94,12 @@
                 transition: background 0.5s;
             }
             .btn:hover{
-                background-color: #00A807; 
+                background-color: #2C2C2C; 
+                color:white;
             }
             nav ul li a:hover{
-                color: #00A807;
+                color: #FF8F81;
             }
-            .categorias{
-                margin: auto;
-                margin-top: 40px;
-                max-width: 1080px;
-                padding: 10px;
-            }
-
-            .col-3{
-                margin-top: 30px;
-                flex-basis: 30%;
-                min-width: 250px;
-                margin-bottom:30px;
-            }
-            .col-3 img{
-                width: 135%;
-                box-shadow: 0px 0px 8px #00A807;
-            }
-
             .titulo{
                 text-align: center;
                 margin: 0 auto 80px;
@@ -129,6 +119,26 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            .categorias{
+                margin: auto;
+                margin-top: 40px;
+                max-width: 1080px;
+                padding: 10px;
+            }
+
+            .col-3{
+                margin-top: 30px;
+                flex-basis: 30%;
+                min-width: 250px;
+                margin-bottom:30px;
+            }
+            .col-3 img{
+                width: 135%;
+              
+                box-shadow: 0px 0px 8px #111;
+            }
+
+
             .contenedor-pequeno{
                 max-width: 1080px;
                 margin: auto;
@@ -147,16 +157,18 @@
                 min-width: 200px;
                 margin-bottom: 50px;
                 position: relative;
+                
             }
             .col-4 .card{
-                box-shadow: 0px 0px 8px #00A807;
+                box-shadow: 0px 0px 8px #111;
                 position: relative;
                 width: 320px;
                 height: 600px;
-                background: #232323;
+                background: radial-gradient(#1F1F1F,#111);
                 border-radius: 20px;
                 overflow: hidden;
-                margin-bottom: 50px;
+                margin-bottom: 60px;
+                
             }
             .col-4 .card:before{
 
@@ -166,7 +178,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: #00A807;
+                background: #FF7058;
                 clip-path: circle(200px at 80% 20%);
                 transition: .5s ease-in-out;
             }
@@ -178,38 +190,42 @@
                 content: 'ZyKe';
                 position: absolute;
                 top: 40%;
-                left: 0%;
+                left: -10%;
                 font-size: 8em;
                 font-weight: 800;
                 font-style: italic;
-                color: rgba(255, 255, 255,0.04);
+                color: rgba(255, 255, 255,0.05);
 
             }
 
             .col-4 .card .img-box{
                 position: absolute;
-                top: 40%;
+                top: 38%;
                 transform: translateY(-50%);
                 z-index: 12;
                 width: 100%;
                 height: 220px;
                 transition: .5s; 
+                color:#fff;
             }
 
             .col-4 .card:hover .img-box{
+                color:#fff;
                 top: 0%;
                 transform: translateY(0%);
             }
             .col-4 .card .img-box img{
+                
                 position: absolute;
-                top: 84%;
-                left: 48%;
+                top: 75%;
+                left: 52%;
                 transform: translate(-50%,-50%);
-                width: 350px;
+                width: 300px;
             }
             .col-4 .card .contenedor-bx{
+                 color:#fff;
                 position: absolute;
-                bottom: 10px;
+                bottom: 40px;
                 width: 100%;
                 height: 50px;
                 text-align: center;
@@ -221,12 +237,14 @@
             }
 
             .col-4 .card .contenedor-bx h4{
+                color:#fff;
                 position: relative;
                 font-weight: 600;
                 letter-spacing: 1px;
-                color: #fff;
+
             }
             .col-4 .card .contenedor-bx .tipo,.col-4 .card .contenedor-bx .tamaño{
+                color:#fff;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -246,26 +264,29 @@
                 transition-delay:0.6s ;
             }
             .col-4 .card .contenedor-bx .tipo h5,.col-4 .card .contenedor-bx .tamaño h5{ 
-                color: #fff;
+                 color:#fff;
+
                 font-weight: 300;
                 font-size: 14px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 margin-right: 10px;
+                margin-bottom: 20px;
             }
             .col-4 .card .contenedor-bx a{
                 display: inline-block;
                 padding: 10px 20px;
-                background: #fff;
+                background: #FF5032;
                 border-radius: 4px;
                 margin-top: 3px;
                 text-decoration: none;
                 font-weight: 600;
-                color: #111;
+                color: #fff;
                 opacity: 0;
                 border:none;
                 transform: translateY(50px);
                 transition: 0.5s;
+                 margin-bottom: 5px;
             }
             .col-4 .card:hover .contenedor-bx a{
                 opacity: 1;
@@ -273,15 +294,16 @@
                 transition-delay: 0.75s;
             }
             .col-4 .card .contenedor-bx button{
+                margin-bottom: 5px;
                 display: inline-block;
                 border:none;
                 padding: 10px 20px;
-                background: #fff;
+                background: #FF5032;
                 border-radius: 4px;
                 margin-top: 3px;
                 text-decoration: none;
                 font-weight: 600;
-                color: #111;
+                color: #fff;
                 opacity: 0;
                 transform: translateY(50px);
                 transition: 0.5s;
@@ -300,100 +322,91 @@
     </head>
     <body>
         <div class="cabezera">
-            <div class="navbar" style=" display: flex; align-items: center">
+            <div class="navbar" style="font-family: 'Merriweather Sans', sans-serif;height: 90px; display: flex; align-items: center; font-size:110%; background: rgba(20, 20, 20,0.1); margin-top: -10px;">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; width: 100%;"></i></span>
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#111; width: 100%;"></i></span>
                 </button>  
                 <div class="nav-item dropdown" > 
-                    <a class="navbar-brand" style="color: white" href="#" data-toggle="dropdown"><img src="img/zykelogo.png" width="60" height="60"> ZyKe Store</a>
-                    <div class="dropdown-menu nav-item"  style="background: rgba(255, 255, 255,0.04);">  
+                    <a class="navbar-brand" style="color: #111 ;font-size:120% " href="#" data-toggle="dropdown"><img src="img/logo1.png" width="70" height="70"> ZyKe Store</a>
+                    <div class="dropdown-menu nav-item"  style="background: rgba(255, 255, 255,0.6);">  
                         <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                            <a class="nav-link dropdown-item"  style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";'  href="./Controlador?accion=Usuarios"><i class="fa fa-angle-right"></i> Usuarios</a>
-                            
+                            <a class="nav-link dropdown-item"  style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";'  href="./Controlador?accion=Usuarios"><i class="fa fa-angle-right"></i> Usuarios</a>
+
                             <c:if test="${clientelogueado.idrol==1}">
-                                <a class="nav-link dropdown-item"  style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' href="./Controlador?accion=Productos"><i class="fa fa-angle-right"></i> Productos</a>                                                                         
+                                <a class="nav-link dropdown-item"  style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' href="./Controlador?accion=Productos"><i class="fa fa-angle-right"></i> Productos</a>                                                                         
                             </c:if>
                             <c:if test="${clientelogueado.idrol==1}">
-                                <a class="nav-link dropdown-item" style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' href="./Controlador?accion=Reportes"><i class="fa fa-angle-right"></i> Reportes</a>                                                                         
+                                <a class="nav-link dropdown-item" style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' href="./Controlador?accion=Reportes"><i class="fa fa-angle-right"></i> Reportes</a>                                                                         
                             </c:if>
                         </c:if>
                     </div>
                 </div>
 
-                <div style="flex: 1; text-align: right;" id="navbarTogglerDemo03">
+                <div style="flex: 1; text-align: right; margin-bottom: -20px" id="navbarTogglerDemo03">
                     <ul style="display: inline-block; list-style-type: none;">
                         <li style=" display: inline-block; margin-right: 30px; ">
-                            <a style="text-decoration: none; color: #999999;" class="nav-link" href="./Controlador?accion=home"><i class="fas fa-home" style="color: white"></i> Home<span class="sr-only">(current)</span></a>
+                            <a style="text-decoration: none; color: #111; margin-left: -10px;margin-right: -30px;  " class="nav-link" href="./Controlador?accion=home">Home<span class="sr-only">(current)</span></a>
                         </li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" href="./Controlador?accion=Nuevo"><i class="fas fa-sliders-h" style="color: white"></i> Categorias</a>
-                            <div class="dropdown-menu nav-item bg-dark">
-                        <c:forEach var="cat" items="${categorias}">
-                            <a class="nav-link dropdown-toggle" href="Controlador?accion=ListarCategoria&idCat=${cat.id}"><i class="fa fa-angle-right"></i>${cat.categoria}</a>
-                            <div class="dropdown-divider"></div>
-                        </c:forEach>                          
-                    </div>
-                </li>-->
-                        <li class="nav-item" style=" display: inline-block; margin-right: 30px; ">
-                            <a class="nav-link"style="text-decoration: none; color: #999999;" href="./Controlador?accion=Oferta"><i class="fas fa-plus-circle" style="color: white"></i> Ofertas del Dia</a>
+                        <li class="nav-item" style=" display: inline-block; margin-right: -1px;  ">
+                            <a class="nav-link"style="text-decoration: none; color: #111;" href="./Controlador?accion=Oferta"></i> Ofertas del Dia</a>
                         </li>                   
-                        <li class="nav-item" style=" display: inline-block; margin-right: 30px; ">
-                            <a class="nav-link"style="text-decoration: none; color: #999999;" href="./Controlador?accion=carrito"><i class="fas fa-cart-plus" style="color: white">(<label style="color:#00A807">${cont}</label>)</i> Carrito</a>
+                        <li class="nav-item" style=" display: inline-block; margin-right: 15px;  ">
+                            <a class="nav-link"style="text-decoration: none; color: #111;" href="./Controlador?accion=carrito"> Carrito (<label style=" font-weight: bold; color:#FF523B">${cont}</label>)</a>
                         </li>                               
                     </ul>   
                     <ul style="display: inline-block; list-style-type: none;">
                         <form action="Controlador" class="container-1" style=" width: 300px; vertical-align: middle; white-space: nowrap; position: relative;">
-                            <button class="icon" style="" type="submit" name="accion" value="BuscarProducto"><i class="fas fa-search"></i></button>
-                            <input placeholder="Buscar" class="" style="width: 200px;height: 30px; background: rgba(255, 255, 255,0.04); border: none; font-size: 10pt; float: left; color: #fff; padding-left: 45px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" name="txtBuscar">
+                            <button class="icon" style="font-size: 80%; background: rgba(255, 255, 255,0.3); " type="submit" name="accion" value="BuscarProducto"><i class="fas fa-search" style="color:#111; "></i></button>
+                            <input placeholder="Buscar" class="" style="width: 200px;height: 40px;margin-top: -3px; background: rgba(255, 255, 255,0.3); border: none; font-size: 12pt; float: left; color: #fff; padding-left: 45px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" name="txtBuscar">
                         </form>  
 
                     </ul>
                     <ul role="group" style="display: inline-block; list-style-type: none; ">
                         <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">
-                            <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-user-tie" style="color: whitesmoke;"></i> Iniciar Sesion</a> 
+                            <a style="color: black; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-user" style="color: black;"></i> Iniciar Sesion</a> 
                             </c:if>                                              
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                            <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-user-tie" style="color: whitesmoke;"></i> ${clientelogueado.nombres}</a>  
+                            <a style="color: black; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-user" style="color: black;"></i> ${clientelogueado.nombres}</a>  
                             </c:if>    
-                        <div class="dropdown-menu text-center dropdown-menu-right" style="background: rgba(255, 255, 255,0.04); margin-top: -25px">
+                        <div class="dropdown-menu text-center dropdown-menu-right" style="background: rgba(255, 255, 255,0.6); margin-top: -1px">
                             <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" href="#"><img src="img/usuario.png" width="60" height="60"/></a>                        
-                                <a style="color:whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">Iniciar Sesion</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="#"><img src="img/logo02.png" width="60" height="60"/></a>                        
+                                <a style="color:black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">Iniciar Sesion</a> 
                             </c:if>                                              
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" href="#"><img src="${clientelogueado.foto}" width="60" height="60"/></a>                       
-                                <a style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">${clientelogueado.email}</a>  
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="#"><img src="${clientelogueado.foto}" width="60" height="60"/></a>                       
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">${clientelogueado.email}</a>  
                             </c:if>                      
-                           
+
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";'class="dropdown-item" href="./Controlador?accion=MisCompras">Mis Compras</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";'class="dropdown-item" href="./Controlador?accion=MisCompras">Mis Compras</a> 
                             </c:if>  
                             <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">                            
-                                <a style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">Mis Compras</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">Mis Compras</a> 
                             </c:if>   
-                           
-                            <a  style="color: whitesmoke;" onmouseover='this.style.color="black";'  onmouseout='this.style.color="whitesmoke";' class="dropdown-item" href="./Controlador?accion=Salir"> <i class="fas fa-arrow-right"> Salir</i></a>                        
+
+                            <a  style="color: black; font-family: 'Merriweather Sans', sans-serif !important;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="./Controlador?accion=Salir"> <i class="fas fa-sign-out-alt"> Salir</i></a>                        
                         </div>
                     </ul>     
                 </div>
             </div>
-            <div class="fila">
-                <div class="col-2">
-                    <h1>Siente Un Verdadero <br> Gamer!</h1>
-                    <p> Todos Nuestros Productos Van 100% Enfocados Para Los Verdaderos Gamers,
+            <div class="fila" style="margin-left:-100px; ">
+                <div class="col-2" style="">
+                    <h1 style="font-weight: bold; font-size: 70px">Siente Un Verdadero <br> <br> Gamer!</h1>
+                    <p style=" font-size: 20px"> Todos Nuestros Productos Van 100% Enfocados Para Los Verdaderos Gamers,
                         Esto Es Para Consentir A Los Mejores Gamers Del Pais. Se Parte De Ellos.</p>
                     <a href="" class="btn">Explora Ahora &#10140;</a>
                 </div>
                 <div class="col-2">
-                    <img src="img/gamer1.png" >
+                    <img src="img/gamer2.png" >
                 </div>
             </div>
         </div>
         <div class="categorias">
-            <div class="contenedor-pequeno">
+            <div class="contenedor-pequeno" >
 
                 <div class="fila">
                     <div class="col-3">
@@ -413,7 +426,15 @@
             <div class="row">  
 
                 <c:forEach var="p" items="${productos}">
-                    <div class="col-4">
+                    <div class="col-4" style="display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 70vh;
+                flex-basis: 25%;
+                padding: 10px;
+                min-width: 285px;
+                position: relative;
+                ">
 
                         <div class="card">
                             <div class="img-box">
@@ -465,7 +486,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <c:if test="${p.getStock()!=0}"> 
                                         <c:if test="${clientelogueado.id==null||clientelogueado.id==0}"> 
                                             <button data-toggle="modal" onclick="CargarModalLogueo1()" data-target="#myModalLogueo1" class="btn btn2 btn-outline-primary">Agregar a Carrito<i class="fas fa-cart-plus"></i></button>

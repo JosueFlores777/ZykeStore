@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/josue/Desktop/ZykeStore/web/vistas/carrito.jsp</file>
-            <file>file:/C:/Users/josue/Desktop/ZykeStore/src/java/com/sinfloo/controlador/Controlador.java</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/Progra4/src/java/com/sinfloo/controlador/Controlador.java</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/Progra4/src/java/com/sinfloo/modelo/Producto.java</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/Progra4/web/index.jsp</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/Progra4/web/vistas/carrito.jsp</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/Progra4/src/java/com/sinfloo/modelo/Carrito.java</file>
         </group>
     </open-files>
 </project-private>

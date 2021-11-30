@@ -358,7 +358,7 @@
                     <ul style="display: inline-block; list-style-type: none;">
                         <form action="Controlador" class="container-1" style=" width: 300px; vertical-align: middle; white-space: nowrap; position: relative;">
                             <button class="icon" style="font-size: 80%; background: rgba(255, 255, 255,0.3); " type="submit" name="accion" value="BuscarProducto"><i class="fas fa-search" style="color:#111; "></i></button>
-                            <input placeholder="Buscar" class="" style="width: 200px;height: 40px;margin-top: -3px; background: rgba(255, 255, 255,0.3); border: none; font-size: 12pt; float: left; color: #fff; padding-left: 45px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" name="txtBuscar">
+                            <input placeholder="Buscar" class="" style="width: 200px;height: 40px;margin-top: -3px; background: rgba(255, 255, 255,0.3); border: none; font-size: 12pt; float: left; color: #111; padding-left: 45px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" name="txtBuscar">
                         </form>  
 
                     </ul>

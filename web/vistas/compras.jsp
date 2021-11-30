@@ -9,133 +9,95 @@
         <title>Carrito de Compras</title>
         <style>
             body{
-                background-color: #000000  !important;
+                background-color: #fff  !important;
                 font-family:  sans-serif !important;
-                color: white !important;
+                color: black !important;
 
             }
-            .cabezera{
-                background: linear-gradient(45deg,#000000,#0A2012);
-                padding-bottom: 540px;
-            }
-            table {
-                //margin-left: -80px;
-                width: 1100px;
-                border-collapse: collapse;
-                overflow: hidden;
-                box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            }
-
-            th,
-            td {
-                padding: 20px;
-                background-color: rgba(255,255,255,0.2);
-                color: #fff;
-            }
-
-            th {
+            
+            th{
                 text-align: left;
+                padding: 5px;
+                color: #fff;
+                background: #ff523b;
+                font-weight: bold;
             }
-
-            thead {
-                th {
-                    background-color: #55608f;
-                }
+            td{
+                padding: 10px 5px;
             }
-
-            tbody {
-                tr {
-                    &:hover {
-                        background-color: rgba(255,255,255,0.3);
-                    }
-                }
-                td {
-                    position: relative;
-                    &:hover {
-                        &:before {
-                            content: "";
-                            position: absolute;
-                            left: 0;
-                            right: 0;
-                            top: -9999px;
-                            bottom: -9999px;
-                            background-color: rgba(255,255,255,0.2);
-                            z-index: -1;
-                            
-                        }
-                    }
-                }
+            table{
+                width: 100%;
+                border-collapse: collapse;
             }
         </style>
     </head>
     <body>   
         <div class="cabezera">
-            <div class="navbar" style=" display: flex; align-items: center">
+            <div class="navbar" style=" font-family: 'Merriweather Sans', sans-serif;height: 90px; display: flex; align-items: center; font-size:110%; background: linear-gradient(0deg,#fff,#ffd6d6);margin-top: -10px;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; width: 100%;"></i></span>
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#111; width: 100%;"></i></span>
                 </button>
-                <a class="navbar-brand" style="color: white" href="#"><i><img src="img/logo.png" width="60" height="60"></i>ZyKe Store</a>
+                <a class="navbar-brand" style="color: black; font-size:120%" href="#"><i><img src="img/logo.png" width="60" height="60"></i>ZyKe Store</a>
 
                 <div style="flex: 1; text-align: right;" id="navbarTogglerDemo03">
                     <ul style="display: inline-block; list-style-type: none;">
                         <li style=" display: inline-block; margin-right: 15px; ">
-                            <a class="nav-link"style="text-decoration: none; color: #999999;" href="./Controlador?accion=Nuevo"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
+                            <a class="nav-link"style="text-decoration: none; color: #111;" href="./Controlador?accion=Nuevo"> Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li style=" display: inline-block; margin-right: 15px; ">
-                            <a class="nav-link"style="text-decoration: none; color: #999999;" href="./Controlador?accion=Oferta"><i class="fas fa-plus-circle"></i> Ofertas del Dia</a>
+                            <a class="nav-link"style="text-decoration: none; color: #111;" href="./Controlador?accion=Oferta"></i> Ofertas del Dia</a>
                         </li>                   
                         <li style=" display: inline-block; margin-right: 15px; ">
-                            <a class="nav-link"style="text-decoration: none; color: #999999;"href="./Controlador?accion=home"><i class="fas fa-plus-circle"></i> Seguir Comprando</a>
+                            <a class="nav-link"style="text-decoration: none; color: #111;"href="./Controlador?accion=home"> Seguir Comprando</a>
                         </li>
-                        <li class="nav-item" style=" display: inline-block; margin-right: 15px; " >
-                            <a class="nav-link " style="text-decoration: none; color: #999999;" href="./Controlador?accion=carrito"><i class="fas fa-cart-plus"></i> Carrito</a>
-                        </li> 
+                        <li class="nav-item" style=" display: inline-block; margin-right: 15px;  ">
+                            <a class="nav-link"style="text-decoration: none; color: #111;" href="./Controlador?accion=carrito"> Carrito (<label style=" font-weight: bold; color:#FF523B">${cont}</label>)</a>
+                        </li>
                     </ul>  
                     <ul role="group" style="display: inline-block; list-style-type: none; ">
                         <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">
-                            <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-user-tie" style="color: whitesmoke;"></i> Iniciar Sesion</a> 
+                            <a style="color: black; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-user" style="color: black;"></i> Iniciar Sesion</a> 
                             </c:if>                                              
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                            <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-user-tie" style="color: whitesmoke;"></i> ${clientelogueado.nombres}</a>  
+                            <a style="color: black; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-user" style="color: black;"></i> ${clientelogueado.nombres}</a>  
                             </c:if>    
                         <div class="dropdown-menu text-center dropdown-menu-right" style="background: rgba(255, 255, 255,0.04); margin-top: -25px">
                             <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" href="#"><img src="img/usuario.png" width="60" height="60"/></a>                        
-                                <a style="color:whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">Iniciar Sesion</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="#"><img src="img/usuario.png" width="60" height="60"/></a>                        
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">Iniciar Sesion</a> 
                             </c:if>                                              
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" href="#"><img src="${clientelogueado.foto}" width="60" height="60"/></a>                       
-                                <a style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">${clientelogueado.email}</a>  
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="#"><img src="${clientelogueado.foto}" width="60" height="60"/></a>                       
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">${clientelogueado.email}</a>  
                             </c:if>                      
 
                             <c:if test="${clientelogueado.id!=null&&clientelogueado.id!=0}">
-                                <a style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";'class="dropdown-item" href="./Controlador?accion=MisCompras">Mis Compras</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";'class="dropdown-item" href="./Controlador?accion=MisCompras">Mis Compras</a> 
                             </c:if>  
                             <c:if test="${clientelogueado.id==null||clientelogueado.id==0}">                            
-                                <a style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" onclick="CargarModalLogueo()">Mis Compras</a> 
+                                <a style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" onclick="CargarModalLogueo()">Mis Compras</a> 
                             </c:if>   
 
-                            <a  style="color: whitesmoke;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "whitesmoke";' class="dropdown-item" href="./Controlador?accion=Salir"> <i class="fas fa-arrow-right"> Salir</i></a>                        
+                            <a  style="color: black;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' class="dropdown-item" href="./Controlador?accion=Salir"> <i class="fas fa-sign-out-alt"> Salir</i></a>                        
                         </div>
                     </ul>     
                 </div>
             </div> 
             <div class="container mt-4">
-                <h2>Mis Compras</h2>
                 <div class="row">            
                     <table class="table tab-pane">
                         <thead class="thead-light">
                             <tr class="text-center">
-                                <th>CODIGO DE COMPRA</th>                               
-                                <th>Fecha de Compra</th>
-                                <th>Monto</th>                                                   
-                                <th>Descuento</th>                                                   
-                                <th>IVA</th>                                                   
-                                <th>MontoFinal</th>                                                   
-                                <th>Codigo de Pago</th>                      
-                                <th></th>                                                   
+                                <th style=" color: #fff;background: #FF7058;font-weight: bold;">CODIGO DE COMPRA</th>                               
+                                <th style=" color: #fff;background: #FF7058;font-weight: bold;">Fecha de Compra</th>
+                                <th style=" color: #fff;background: #FF7058;font-weight: bold;">Monto</th>                                                   
+                                <th  style=" color: #fff;background: #FF7058;font-weight: bold;" >Descuento</th>                                                   
+                                <th  style=" color: #fff;background: #FF7058;font-weight: bold;">IVA</th>                                                   
+                                <th  style=" color: #fff;background: #FF7058;font-weight: bold;">MontoFinal</th>                                                   
+                                <th  style=" color: #fff;background: #FF7058;font-weight: bold;">Codigo de Pago</th>                      
+                                <th  style=" color: #fff;background: #FF7058;font-weight: bold;">Ver Detalle</th>                                                   
                             </tr>
                         </thead>
                         <tbody>

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Conexion {
     Connection con;
- String url = "jdbc:sqlserver://DESKTOP-OM8C2CV\\SQLEXPRESS:1433;databaseName=Proyec";
+ String url = "jdbc:sqlserver://DESKTOP-FRTFUPQ\\SQLEXPRESS:1433;databaseName=Proyec";
           String user = "BD24K";
              String password = "123";
 

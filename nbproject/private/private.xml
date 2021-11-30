@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/src/java/com/sinfloo/config/Conexion.java</file>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/src/java/com/sinfloo/modelo/ComprasDAO.java</file>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/web/vistas/addProducto.jsp</file>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/src/java/com/sinfloo/modelo/ClienteDAO.java</file>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/web/vistas/iniciarSesion.jsp</file>
-            <file>file:/C:/Users/josue/Desktop/a2/Progra4/src/java/com/sinfloo/controlador/Controlador.java</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/ZykeStore/Progra4/web/vistas/addUsuario.jsp</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/ZykeStore/Progra4/web/vistas/editProducto.jsp</file>
+            <file>file:/C:/Users/Alex%20Palma/Desktop/ZykeStore/Progra4/web/vistas/addProducto.jsp</file>
         </group>
     </open-files>
 </project-private>

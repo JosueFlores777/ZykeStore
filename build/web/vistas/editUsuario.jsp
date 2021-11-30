@@ -9,6 +9,23 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>        
         <title>Carrito de Compras</title>
+        <style>
+            .input-login {
+                padding-left: 20px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                box-sizing: border-box;
+                background: rgba(0, 0, 0,0.1);
+                height: 40px;
+                width: 765px;
+            }
+
+            .input-login:hover {
+                border: 2px solid #111;
+            }
+        </style>
     </head>
     <body>      
         <form action="Controlador?accion=ActualizarUsuario" method="POST" enctype="multipart/form-data">
@@ -21,41 +38,28 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-address-card"></i></span>
-                        </div>
-                        <input type="number" id="dni" name="txtDni" value="${cliente.dni}" class="form-control" placeholder="46184659">
+                        
+                        <input type="number" id="dni" name="txtDni" value="${cliente.dni}" class="input-login" placeholder="46184659">
                     </div>                                                   
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-user-plus"></i></span>
-                        </div>
-                        <input type="text" name="txtNom" value="${cliente.nombres}" class="form-control" placeholder="Nombres Apellidos">
+                        
+                        <input type="text" name="txtNom" value="${cliente.nombres}" class="input-login" placeholder="Nombres Apellidos">
                     </div>                                                   
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-address-card"></i></span>
-                        </div>
-                        <input type="text" name="txtDir" value="${cliente.direccion}" class="form-control" placeholder="Av. Los Almaos N°356">
+                        
+                        <input type="text" name="txtDir" value="${cliente.direccion}" class="input-login" placeholder="Av. Los Almaos N°356">
                     </div>                                                   
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-at"></i></span>
-                        </div>
-                        <input type="email" name="txtCorreo" value="${cliente.email}" class="form-control" placeholder="example@gmail.com" >
+                        
+                        <input type="email" name="txtCorreo" value="${cliente.email}" class="input-login" placeholder="example@gmail.com" >
                     </div>                                                   
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-unlock-alt"></i></span>
-                        </div>
-                        <input type="text" name="txtPass" value="${cliente.pass}" class="form-control" value="12345678">
+                        
+                        <input type="text" name="txtPass" value="${cliente.pass}" class="input-login" value="12345678">
                     </div> 
                     <c:if test="${clientelogueado.idrol==1}">
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-user"></i></span>
-                            </div>
-                            <select class="form-control" name="txtRol">                                    
+                            <select class="input-login" name="txtRol">                                    
                                 <c:forEach items="${roles}" var="rol">
                                     <option value="${rol.id}"
                                             <c:if test="${rol.id==cliente.idrol}">
@@ -67,13 +71,11 @@
                         </div> 
                     </c:if>
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-cloud-upload-alt"></i></span>
-                        </div>
-                        <input type="file" name="file">
+                        
+                        <input class="input-login" type="file" name="file">
                     </div>     
                     <div class="ml-auto po">
-                        <button type="submit" name="accion" value="ActualizarUsuario" class="btn btn-outline-primary"><i class="fa fa-save"></i> Actualizar</button>
+                        <button type="submit" name="accion" value="ActualizarUsuario" class="btn btn-outline-dark"><i class="fa fa-save"></i> Actualizar</button>
                     </div>
                 </div>                  
             </div>

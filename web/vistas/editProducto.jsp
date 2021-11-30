@@ -63,7 +63,7 @@
                 </div>                                    
             </div>
             <div class="form-group">
-                <button type="submit" name="accion" value="ActualizarProducto"class="btn btn-success">Actualizar</button>
+                <button type="submit" name="accion" value="ActualizarProducto"class="btn btn-outline-dark">Actualizar</button>
             </div>
         </form>                      
 

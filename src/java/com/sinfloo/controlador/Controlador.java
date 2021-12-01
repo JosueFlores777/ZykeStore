@@ -412,7 +412,7 @@ public class Controlador extends HttpServlet {
                     for (int i = 0; i < items.size(); i++) {
                         FileItem fileItem = (FileItem) items.get(i);
                         if (!fileItem.isFormField()) {
-                            File file = new File("C:\\Users\\josue\\Desktop\\a2\\Progra4\\web\\img\\productos" + fileItem.getName());
+                            File file = new File("C:\\Users\\josue\\Desktop\\a2\\Progra4\\web\\img\\productos\\" + fileItem.getName());
                             fileItem.write(file);
                             p.setImagen("img/productos/" + fileItem.getName());
                         } else {
@@ -628,9 +628,7 @@ public class Controlador extends HttpServlet {
                 request.setAttribute("productos", productos);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
-            case "Reportes":
-                
-                break;
+            
             default:
                 //listaProductos=new ArrayList<>();
                 productos = pdao.listarPag();

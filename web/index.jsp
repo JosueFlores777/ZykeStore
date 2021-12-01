@@ -36,7 +36,7 @@
                 font-size:10px;
                 font-family:Verdana,Helvetica;
                 font-weight:bold;
-                color:111;
+                color:#111;
                 border:0px;
                 width:80px;
                 height:30px;
@@ -337,8 +337,9 @@
                                 <a class="nav-link dropdown-item"  style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' href="./Controlador?accion=Productos"><i class="fa fa-angle-right"></i> Productos</a>                                                                         
                             </c:if>
                             <c:if test="${clientelogueado.idrol==1}">
-                                <a class="nav-link dropdown-item" style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' href="./Controlador?accion=Reportes"><i class="fa fa-angle-right"></i> Reportes</a>                                                                         
+                                <a class="nav-link dropdown-item" style="color: #111;" onmouseover='this.style.color = "black";'  onmouseout='this.style.color = "black";' href="./vistas/Report.jsp"><i class="fa fa-angle-right"></i> Reportes</a>                                                                         
                             </c:if>
+                                
                         </c:if>
                     </div>
                 </div>
@@ -454,25 +455,28 @@
                                     </c:if>
 
                                     <c:if test="${p.getStock()!=0}"> 
-                                        <h5>Precio:<span>$ ${p.getPrecio()}</span> </h5>
+                                        <h5>Precio:<span>$ ${p.getPrecio()}</span>
+                                        
                                         <c:if test="${p.getEstado()=='20'}">
-                                            <img src="img/20Off.png" style="width: 40%;"> 
+                                            <small>(20% OFF)</small>
                                         </c:if>
                                         <c:if test="${p.getEstado()=='30'}">
-                                            <img src="img/30Off.png" style="width: 40%;"> 
+                                             <small>(30% OFF)</small> 
                                         </c:if>                                                         
                                         <c:if test="${p.getEstado()=='40'}">
-                                            <img src="img/40Off.png" style="width: 40%;"> 
+                                            <small>(40% OFF)</small>
                                         </c:if>                                                         
                                         <c:if test="${p.getEstado()=='50'}">
-                                            <img src="img/50Off.png" style="width: 40%;"> 
+                                             <small>(50% OFF)</small>
                                         </c:if>                                                         
                                         <c:if test="${p.getEstado()=='60'}">
-                                            <img src="img/60Off.png" style="width: 40%;"> 
+                                             <small>(60% OFF)</small> 
                                         </c:if>                                                         
                                         <c:if test="${p.getEstado()=='70'}">
-                                            <img src="img/70Off.png" style="width: 40%;"> 
+                                             <small>(70% OFF)</small>
                                         </c:if>  
+                                        </h5> 
+                                     
                                     </c:if>
                                 </div>
 

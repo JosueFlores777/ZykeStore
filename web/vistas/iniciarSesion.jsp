@@ -178,7 +178,7 @@
                 <h1 class="title-login" style="margin-top:3rem;margin-bottom:4rem;">Iniciar Sesion</h1>
                 <form class="inputs-container-login" action="Controlador">
                     <input class="input-login"  type="text" name="txtemail" required="" class="form-control" placeholder="Correo">
-                    <input class="input-login" type="text" placeholder="Contraseña" type="password" name="txtpass" required=""  class="form-control">
+                    <input class="input-login"  placeholder="Contraseña" type="password" name="txtpass" required=""  class="form-control">
 
                     <button class="btn-login" type="submit" name="accion" value="Validar" >Iniciar Sesion</button>
                     <p>¿No tienes cuenta? <a class="span-login" data-toggle="pill" href="#pills-registrar">Registrate</a></p>
